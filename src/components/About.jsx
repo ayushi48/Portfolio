@@ -19,9 +19,13 @@ const socials = [
     icon: Instagram,
     link: "https://www.instagram.com/ayushikumari9015?igsh=MWYyaml3bGI1MHEwZw==",
   },
+  // {
+  //   icon: Mail,
+  //   link: "mailto:contact@ayushikumari.me",
+  // },
   {
-    icon: Mail,
-    link: "mailto:contact@ayushikumari.me",
+  icon: Mail,
+  link: "https://mail.google.com/mail/?view=cm&to=contact@ayushikumari.me",
   },
 ];
 const ServiceCard = ({ index, title, icon }) => (
