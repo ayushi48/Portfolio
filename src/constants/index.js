@@ -315,7 +315,7 @@ const projects = [
   },
   // 2
   {
-    name: "ALGOARENA (CODING PLATFORM )",
+    name: "ALGOARENA",
     description:
       "Developed a full-stack coding platform implementing JWT-based authentication and role-based access control (RBAC) for admin and user roles. Built admin workflows for problem creation, management, and moderation, while enabling users to write, execute, and submit code with real-time evaluation via Judge0 API integration. Integrated an AI-powered chatbot for user support, implemented premium content gating for paid users, and enabled secure, seamless payment processing for subscription-based access.",
 
@@ -353,7 +353,7 @@ const projects = [
   },
   //3
   {
-    name: "Stylish-Wear-Aesthetics (E COMMERCE WEBSITE)",
+    name: "Stylish-Wear-Aesthetics",
     description:
       "Developed a full-stack e-commerce platform implementing JWT and cookie-based authentication with role-based access control (RBAC) for admin and user roles. Designed and built separate admin and user dashboards, enabling real-time product creation, updates, and inventory management. Implemented secure authentication flows, protected routes, and a fully responsive user interface to support scalable product management and seamless user interactions.",
     tags: [
