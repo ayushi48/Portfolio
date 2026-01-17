@@ -21,7 +21,7 @@ const socials = [
   },
   {
     icon: Mail,
-    link: "mailto:ayushikr2016@gmail.com",
+    link: "mailto:contact@ayushikumari.me",
   },
 ];
 const ServiceCard = ({ index, title, icon }) => (
@@ -194,31 +194,59 @@ const About = () => {
                 {/* Social Icons */}
                 <div className="flex gap-6 justify-center sm:justify-end items-center mt-6 sm:mt-0">
                   {socials.map((item, index) => (
-                    <motion.a
-                      key={index}
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        delay: index * 0.15,
-                        type: "spring",
-                        stiffness: 120,
-                        damping: 12,
-                      }}
-                      whileHover={{ scale: 1.15, rotate: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-12 h-12 rounded-full
-          flex items-center justify-center
-          border-2 border-cyan-400
-          text-cyan-400
-          hover:bg-cyan-400 hover:text-black
-          shadow-[0_0_15px_rgba(34,211,238,0.6)]
-          transition-colors duration-300"
-                    >
-                      <item.icon size={22} />
-                    </motion.a>
+          //           <motion.a
+          //             key={index}
+          //             href={item.link}
+          //             target="_blank"
+          //             rel="noopener noreferrer"
+          //             initial={{ opacity: 0, y: 20 }}
+          //             animate={{ opacity: 1, y: 0 }}
+          //             transition={{
+          //               delay: index * 0.15,
+          //               type: "spring",
+          //               stiffness: 120,
+          //               damping: 12,
+          //             }}
+          //             whileHover={{ scale: 1.15, rotate: 5 }}
+          //             whileTap={{ scale: 0.95 }}
+          //             className="w-12 h-12 rounded-full
+          // flex items-center justify-center
+          // border-2 border-cyan-400
+          // text-cyan-400
+          // hover:bg-cyan-400 hover:text-black
+          // shadow-[0_0_15px_rgba(34,211,238,0.6)]
+          // transition-colors duration-300"
+          //           >
+          //             <item.icon size={22} />
+          //           </motion.a>
+
+
+<motion.a
+  key={index}
+  href={item.link}
+ target="_blank"
+rel="noopener noreferrer"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    delay: index * 0.15,
+    type: "spring",
+    stiffness: 120,
+    damping: 12,
+  }}
+  whileHover={{ scale: 1.15, rotate: 5 }}
+  whileTap={{ scale: 0.95 }}
+  className="w-12 h-12 rounded-full
+    flex items-center justify-center
+    border-2 border-cyan-400
+    text-cyan-400
+    hover:bg-cyan-400 hover:text-black
+    shadow-[0_0_15px_rgba(34,211,238,0.6)]
+    transition-colors duration-300"
+>
+  <item.icon size={22} />
+</motion.a>
+          
                   ))}
                 </div>
 
