@@ -12,7 +12,62 @@ import { useRef } from "react";
 
 
 
+// const ProjectCard = ({
+//   items,
+//   index,
+//   name,
+//   description,
+//   tags,
+//   source_code_link,
+// }) => {
+//   return (
+//     <div className="bg-tertiary p-5 rounded-2xl w-[360px] h-auto flex flex-col justify-between min-h-[480px]">
+//       <div>
+//         <div className="relative w-full bg-black/25 flex justify-center rounded-3xl overflow-hidden">
+//           <Carousel
+//             items={items}
+//             baseWidth={320}
+//             autoplay={true}
+//             autoplayDelay={3000}
+//             pauseOnHover={true}
+//             loop={true}
+//             round={false}
+//           />
+
+//           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+//             <div
+//               onClick={() => window.open(source_code_link, "_blank")}
+//               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+//             >
+//               <img
+//                 src={github}
+//                 alt="source code"
+//                 className="w-1/2 h-1/2 object-contain"
+//               />
+//             </div>
+//           </div>
+//         </div>
+
+//         <div className="mt-2">
+//           <h3 className="text-yellow-400 text-shadow-gold  font-bold text-[24px] font-serif uppercase">{name}</h3>
+//           <p className="mt-2 text-secondary text-[14px] font-serif">{description}</p>
+//         </div>
+//       </div>
+
+//       {/* Tags section at the bottom */}
+//       <div className="mt-4 flex flex-wrap gap-2 uppercase">
+//         {tags.map((tag) => (
+//           <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
+//             #{tag.name}
+//           </p>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
 const ProjectCard = ({
+  link,
+  status,
   items,
   index,
   name,
@@ -21,51 +76,88 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <div className="bg-tertiary p-5 rounded-2xl w-[360px] h-auto flex flex-col justify-between min-h-[480px]">
-      <div>
-        <div className="relative w-full bg-black/25 flex justify-center rounded-3xl overflow-hidden">
+    <div className="bg-tertiary p-5 rounded-2xl w-[360px] min-h-[500px] flex flex-col shadow-lg hover:shadow-2xl transition-shadow duration-300">
+
+      {/* ===== TOP SECTION ===== */}
+      <div className="flex flex-col gap-4">
+
+        {/* Carousel */}
+        <div className="relative w-full bg-black/30 rounded-3xl overflow-hidden flex justify-center">
           <Carousel
             items={items}
             baseWidth={320}
-            autoplay={true}
+            autoplay
             autoplayDelay={3000}
-            pauseOnHover={true}
-            loop={true}
+            pauseOnHover
+            loop
             round={false}
           />
 
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
+          {/* GitHub Button */}
+          <div className="absolute top-3 right-3 card-img_hover">
+            <button
               onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              className="black-gradient w-10 h-10 rounded-full flex items-center justify-center hover:scale-105 transition-transform"
             >
               <img
                 src={github}
                 alt="source code"
-                className="w-1/2 h-1/2 object-contain"
+                className="w-5 h-5 object-contain"
               />
-            </div>
+            </button>
           </div>
         </div>
 
-        <div className="mt-2">
-          <h3 className="text-yellow-400 text-shadow-gold  font-bold text-[24px] font-serif uppercase">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px] font-serif">{description}</p>
+        {/* Project Title */}
+        <h3 className="text-yellow-400 text-shadow-gold font-bold text-[22px] font-serif uppercase tracking-wide">
+          {name}
+        </h3>
+
+        {/* Status + Live */}
+        <div className="flex items-center justify-between px-3 py-2 rounded-lg border border-white/10 bg-black/20">
+
+          {/* Status Badge */}
+          {status ? (
+            <span className="text-green-400 text-xs font-semibold uppercase flex items-center gap-1">
+              ● Completed Project
+            </span>
+          ) : (
+            <span className="text-yellow-400 text-xs font-semibold uppercase flex items-center gap-1 animate-pulse">
+              ● Ongoing
+            </span>
+          )}
+
+          {/* Live Button */}
+          <span
+            onClick={() => window.open(link, "_blank")}
+            className="text-cyan-400 text-xs font-bold cursor-pointer hover:underline"
+          >
+            LIVE ↗
+          </span>
         </div>
+
+        {/* Description */}
+        <p className="text-secondary text-[14px] leading-relaxed font-serif text-justify">
+          {description}
+        </p>
       </div>
 
-      {/* Tags section at the bottom */}
-      <div className="mt-4 flex flex-wrap gap-2 uppercase">
+      {/* ===== TAGS (BOTTOM FIXED) ===== */}
+      <div className="mt-auto pt-4 flex flex-wrap gap-2 uppercase">
         {tags.map((tag) => (
-          <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
+          <span
+            key={`${name}-${tag.name}`}
+            className={`text-[12px] px-2 py-1 rounded-md bg-black/40 tracking-wide ${tag.color}`}
+          >
             #{tag.name}
-          </p>
+          </span>
         ))}
       </div>
+
     </div>
+
   );
 };
-
 const Works = () => {
 
   const scrollRef = useRef(null);
