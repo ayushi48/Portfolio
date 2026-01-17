@@ -283,6 +283,8 @@ const projects = [
       },
 
     ],
+      link: "https://projectcomingsoon-sigma.vercel.app/",
+    status: "",
     item: [
       {
         id: 1,
@@ -331,6 +333,8 @@ const projects = [
         color: "yellow-text-gradient",
       },
     ],
+      link: "https://algoleague.vercel.app/",
+    status: "complete",
     item: [
       {
         id: 1,
@@ -366,6 +370,8 @@ const projects = [
         color: "yellow-text-gradient",
       },
     ],
+      link: "https://swa-shopping.vercel.app/",
+    status: "complete",
     item: [
       {
         id: 1,
@@ -418,6 +424,8 @@ const projects = [
         color: "orange-text-gradient",
       },
     ],
+      link: "https://ayushikumari.me/",
+    status: "complete",
     item: [
       {
         id: 1,
@@ -458,6 +466,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
+      link: "https://weather-web-sk.vercel.app/",
+    status: "complete",
     item: [
       {
         id: 1,
